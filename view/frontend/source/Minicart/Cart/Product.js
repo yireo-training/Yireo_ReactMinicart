@@ -25,13 +25,10 @@ class Product extends React.Component {
                             <a href={product.product_url}>{product.product_name}</a>
                         </strong>
 
-                        <div className="product options">
-                            <span className="toggle">
-                                <span>See Details</span>
-                            </span>
-
+                        <details>
+                            <summary>See Details</summary>
                             <ProductDetails product={product}/>
-                        </div>
+                        </details>
 
                         <ProductPricing product={product}/>
                         <ProductActions product={product}/>

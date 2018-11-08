@@ -7,11 +7,13 @@ define([
     'use strict';
 
     return function(config, element) {
-        ReactDOM.render(React.createElement(MinicartComponent.default), element);
+        var component = React.createElement(MinicartComponent.default, {showDropdown: false});
+        ReactDOM.render(component, element);
 
         var cart = customerData.get('cart');
         cart.subscribe(function() {
-            ReactDOM.render(React.createElement(MinicartComponent.default), element);
+            var component = React.createElement(MinicartComponent.default, {showDropdown: true});
+            ReactDOM.render(component, element);
         });
     };
 });

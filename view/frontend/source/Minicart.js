@@ -6,22 +6,31 @@ import EmptyCart from "./Minicart/EmptyCart";
 class Minicart extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            showDropdown: true
+            defaultShowdown: props.showDropdown,
+            clickShowDropdown: false
         };
     }
 
     toggleDropdown(event) {
         event.preventDefault();
-        const currentState = this.state.showDropdown;
-        this.setState({showDropdown: !currentState});
+        const currentState = this.state.clickShowDropdown;
+        this.setState({clickShowDropdown: !currentState, defaultShowdown: false});
         return false;
     }
 
     render() {
+        console.log(this.props);
+        console.log(this.state);
+
         var cart = CustomerData.getCartFromLocalStorage();
         var cartSummaryCount = cart.summary_count;
-        var showDropdown = this.state.showDropdown;
+
+        var showDropdown = this.state.clickShowDropdown;
+        if (this.state.clickShowDropdown == false && this.state.defaultShowdown == true) {
+            var showDropdown = true;
+        }
 
         cart.shoppingCartUrl = window.checkout.shoppingCartUrl;
 
