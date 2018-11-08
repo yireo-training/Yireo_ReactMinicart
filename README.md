@@ -7,7 +7,7 @@ Before you install this module, make sure to install the [Yireo_React](https://g
 Use the following commands to install this module into Magento 2:
 
     composer config repositories.yireo-react vcs git@github.com:yireo-training/Yireo_ReactMinicart.git
-    composer require yireo/magento2-react-minicart
+    composer require yireo/magento2-react-minicart:dev-master
     
     ./bin/magento module:enable Yireo_ReactMinicart
     ./bin/magento setup:upgrade
