@@ -21,15 +21,12 @@ class Minicart extends React.Component {
     }
 
     render() {
-        console.log(this.props);
-        console.log(this.state);
-
         var cart = CustomerData.getCartFromLocalStorage();
         var cartSummaryCount = cart.summary_count;
 
         var showDropdown = this.state.clickShowDropdown;
         if (this.state.clickShowDropdown == false && this.state.defaultShowdown == true) {
-            var showDropdown = true;
+            showDropdown = true;
         }
 
         cart.shoppingCartUrl = window.checkout.shoppingCartUrl;
