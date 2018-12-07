@@ -13,6 +13,7 @@ define([
         var cart = customerData.get('cart');
         cart.subscribe(function() {
             var component = React.createElement(MinicartComponent.default, {showDropdown: true});
+            component.setOptions();
             ReactDOM.render(component, element);
         });
     };
