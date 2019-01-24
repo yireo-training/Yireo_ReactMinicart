@@ -24,7 +24,7 @@ gulp.task("build", function () {
                 }
             }
         }))
-        .pipe(babel())
+        .pipe(babel({ presets: ['react'] }))
         .pipe(eslint.format())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest("web/js/compiled/"));
