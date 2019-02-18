@@ -7,14 +7,31 @@ define([
     'use strict';
 
     return function(config, element) {
-        var component = React.createElement(MinicartComponent.default, {showDropdown: false});
-        ReactDOM.render(component, element);
+
+        config.showDropdown = false;
+        config.addMessage = function(message, type) {
+            if (type === undefined) {
+                type = 'success';
+            }
+
+            customerData.set('messages', {
+                messages: [{
+                    type: type,
+                    text: message
+                }]
+            });
+        };
+
+        function renderComponent() {
+            var component = React.createElement(MinicartComponent.default, config);
+            ReactDOM.render(component, element);
+        }
+
+        renderComponent();
 
         var cart = customerData.get('cart');
         cart.subscribe(function() {
-            var component = React.createElement(MinicartComponent.default, {showDropdown: true});
-            component.setOptions();
-            ReactDOM.render(component, element);
+            renderComponent();
         });
     };
 });
