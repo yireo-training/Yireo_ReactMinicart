@@ -21,7 +21,7 @@ class Cart extends React.Component {
 
                 <div className="actions">
                     <div className="primary">
-                        <a href={cart.shoppingCartUrl} className="action primary checkout" title="Proceed to Checkout">Proceed to Checkout
+                        <a href={cart.cartUrl} className="action primary checkout" title="Proceed to Checkout">Proceed to Checkout
                         </a>
                     </div>
                 </div>
