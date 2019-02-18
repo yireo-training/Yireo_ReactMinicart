@@ -1,4 +1,8 @@
 <?php
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Yireo_ReactMinicart', __DIR__);
+ComponentRegistrar::register(
+    ComponentRegistrar::MODULE,
+    'Yireo_ReactMinicart',
+    __DIR__
+);
