@@ -9,10 +9,12 @@ class ProductDetails extends React.Component {
                 <strong className="subtitle"><span>Options Details</span></strong>
                 <dl className="product options list">
                     {product.options.map(function (option) {
-                        return ([
-                            <dt className="label">{option.label}</dt>,
-                            <dd className="values">{option.value}</dd>
-                        ]);
+                        return (
+                            <div key={option.value}>
+                                <dt className="label">{option.label}</dt>
+                                <dd className="values">{option.value}</dd>
+                            </div>
+                        );
                     })}
                 </dl>
             </div>
