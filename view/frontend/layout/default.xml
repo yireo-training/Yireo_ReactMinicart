@@ -3,10 +3,7 @@
     <body>
         <referenceContainer name="header-wrapper">
             <block name="react-minicart" after="logo" template="Yireo_ReactMinicart::minicart.phtml"/>
-            <!--
-            @todo: When removing original cart, window.checkout is empty
-            <referenceBlock name="minicart" remove="true" />
-            -->
         </referenceContainer>
+        <referenceBlock name="minicart" remove="true" />
     </body>
 </page>
