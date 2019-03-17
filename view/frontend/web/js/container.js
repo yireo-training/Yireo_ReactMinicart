@@ -6,7 +6,7 @@ define([
 ], function(React, ReactDOM, MinicartComponent, customerData) {
     'use strict';
 
-    return function(config, element) {
+    return function(config, domElement) {
 
         config.showDropdown = false;
         config.addMessage = function(message, type) {
@@ -22,16 +22,14 @@ define([
             });
         };
 
-        function renderComponent() {
-            var component = React.createElement(MinicartComponent.default, config);
-            ReactDOM.render(component, element);
-        }
-
-        renderComponent();
+        var reactElement = React.createElement(MinicartComponent.default, config);
+        var component = ReactDOM.render(reactElement, domElement);
 
         var cart = customerData.get('cart');
         cart.subscribe(function() {
-            renderComponent();
+            component.forceUpdate();
         });
+
+        return component;
     };
 });
