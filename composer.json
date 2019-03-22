@@ -1,7 +1,7 @@
 {
   "name": "yireo/magento2-react-minicart",
   "type": "magento2-module",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "OSL-3.0",
   "description": "Module to add a React minicart to Magento 2 KO frontend",
   "keywords":[ "composer-installer", "magento"],
