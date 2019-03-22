@@ -20,7 +20,7 @@ This module adds an additional minicart to the Magento 2 frontend, based upon Re
 
     npm install
     
-After this, you should be able to modify the files `view/frontend/source` and compile them to browser code using Gulp:
+After this, you should be able to modify the files `view/frontend/react_source` and compile them to browser code using Gulp:
 
     gulp build
 
