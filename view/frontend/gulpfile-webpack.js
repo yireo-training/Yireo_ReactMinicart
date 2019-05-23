@@ -23,11 +23,11 @@ gulp.task("build", function(callback) {
         resolve: {
             extensions: ['*', '.js', '.jsx'],
             modules: [
-                'source',
+                'react_source',
                 'node_modules'
             ]
         },
-        context: path.resolve(__dirname, 'source/')
+        context: path.resolve(__dirname, 'react_source/')
     };
 
     webpack(config, function(err, stats) {
@@ -40,7 +40,7 @@ gulp.task("build", function(callback) {
 });
 
 gulp.task("watch", function () {
-    gulp.watch('source/', ["build"]);
+    gulp.watch('react_source/', ["build"]);
 });
 
 gulp.task("default", ["build", "watch"]);
