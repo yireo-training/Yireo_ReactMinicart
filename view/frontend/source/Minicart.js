@@ -1,9 +1,9 @@
 import CustomerData from './CustomerData';
-import React from 'react';
+import React, { Component } from 'react';
 import Cart from "./Minicart/Cart";
 import EmptyCart from "./Minicart/EmptyCart";
 
-class Minicart extends React.Component {
+class Minicart extends Component {
     componentWillMount() {
         this.setState((state, props) => {
             let showDropdown = props.showDropdown || false;
@@ -12,10 +12,15 @@ class Minicart extends React.Component {
                 showDropdown: showDropdown
             };
         });
+
+        this.props.foobar.subscribe(function(newFoobar) {
+           this.setState({foobar: newFoobar});
+        });
     }
 
     toggleDropdown(event) {
         event.preventDefault();
+        this.props.addMessage('The minicart is being toggled: ' + Math.random(), 'warning');
         this.setState((state) => { return {showDropdown: !state.showDropdown}; });
         return false;
     }
@@ -26,7 +31,7 @@ class Minicart extends React.Component {
 
         return (
             <div>
-                <a className="action showcart" href="#" onClick={this.toggleDropdown.bind(this)}>
+                <a className="action showcart" role="button" href="#" onClick={this.toggleDropdown.bind(this)}>
                     <span className="text">My Cart</span>
                     {cart.summary_count > 0 &&
                     <span className="counter qty">

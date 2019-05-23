@@ -7,8 +7,12 @@ class Counter extends React.Component {
         return (
             <div className="items-total">
                 <span className="count">{count}</span> &nbsp;
-                {count > 2 && <span>Items in Cart</span>}
-                {count == 1 && <span>Item in Cart</span>}
+                {count >= 2 &&
+                    <span>Items in Cart</span>
+                }
+                {count === 1 &&
+                    <span>Item in Cart</span>
+                }
             </div>
         );
     }

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <referenceBlock name="minicart" remove="true" />
         <referenceContainer name="header-wrapper">
             <block name="react-minicart" after="logo" template="Yireo_ReactMinicart::minicart.phtml"/>
         </referenceContainer>
-        <referenceBlock name="minicart" remove="true" />
     </body>
 </page>
