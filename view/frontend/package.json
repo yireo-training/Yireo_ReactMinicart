@@ -1,10 +1,10 @@
 {
-  "name": "yireo-magento2-react-example",
+  "name": "yireo-magento2-react-minicart",
   "version": "1.0.0",
   "author": "Jisse Reitsma",
   "license": "MIT",
-  "description": "A playground to add React components to Magento 2",
-  "main": "react_source/HelloWorld.js",
+  "description": "A React minicart for Magento 2",
+  "main": "react_source/Minicart.js",
   "dependencies": {
     "create-react-class": "^15.6.3",
     "gulp-sourcemaps": "^2.6.5",
