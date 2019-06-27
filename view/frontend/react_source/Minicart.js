@@ -12,15 +12,10 @@ class Minicart extends Component {
                 showDropdown: showDropdown
             };
         });
-
-        this.props.foobar.subscribe(function(newFoobar) {
-           this.setState({foobar: newFoobar});
-        });
     }
 
     toggleDropdown(event) {
         event.preventDefault();
-        this.props.addMessage('The minicart is being toggled: ' + Math.random(), 'warning');
         this.setState((state) => { return {showDropdown: !state.showDropdown}; });
         return false;
     }
