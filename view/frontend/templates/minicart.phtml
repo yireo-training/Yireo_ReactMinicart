@@ -1,7 +1,11 @@
 <?php
-/** @var \Magento\Framework\View\Element\Template $block */
+declare(strict_types=1);
+
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
 ?>
-<div class="minicart-wrapper" data-mage-init='{"reactMinicart":{"cartUrl":"<?= $this->getUrl('checkout/cart') ?>", "showDropdown": false}}'>
+<div class="minicart-wrapper" id="minicart-wrapper">
     <a class="action showcart" href="<?= $this->getUrl('checkout/cart') ?>">
         <span class="text"><?= __('My Cart') ?></span>
     </a>

@@ -22,7 +22,7 @@ class Minicart extends Component {
 
     render() {
         var cart = CustomerData.getCartFromLocalStorage();
-        cart.cartUrl = this.props.cartUrl;
+        cart.cartUrl = 'checkout/cart';
 
         return (
             <div>
